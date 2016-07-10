@@ -20,3 +20,38 @@ void selectSort(int list[], int n){
 		SWAP(list[i], list[min], t);
 	}
 }
+
+int binarySearch(int list[], int number, int left, int right){
+	int middle=0;
+
+	while(left<=right){
+		middle = (left + right)/2;
+		switch(COMPARE(number, list[middle])){
+			case -1:
+				right = middle - 1;
+				break;
+			case 0:
+				return middle;
+			case 1:
+				left = middle + 1;
+		}
+	}
+	return -1;
+}
+
+int binarySearchR(int list[], int number, int left, int right){
+	int middle=0;
+
+	if(left<=right){
+		middle = (left + right)/2;
+		switch(COMPARE(number, list[middle])){
+			case -1:
+				return binarySearchR(list, number, left, middle-1);
+			case 0:
+				return middle;
+			case 1:
+				return binarySearchR(list, number, middle + 1, right);
+		}
+	}
+	return -1;
+}

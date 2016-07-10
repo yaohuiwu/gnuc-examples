@@ -10,9 +10,18 @@ int main(void){
 
 	selectSort(list, 5);
 	for(i=0; i<5; i++){
-		printf("%d ", list[i]);
+		printf("%d", list[i]);
+		if(i==4)
+			puts("");
+		else
+			printf(" ");
 	}
-	puts("");
+
+	int index = binarySearch(list, 5, 0, 4);
+	printf("The binary search result: index %d, value:%d\n", index, index != -1 ? list[index] : -1);
+
+	int indexR = binarySearchR(list, 5, 0, 4);
+	printf("The binary search result: index %d, value:%d\n", indexR, indexR!= -1 ? list[indexR] : -1);
 
 	return 0;
 }
