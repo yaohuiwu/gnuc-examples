@@ -10,12 +10,11 @@
 #define BUFFER_SIZE 1024
 
 int init_server(int port, u_int32_t addr);
-//remove '\r' or '\n' at end of the str. It's the caller's responsibility to free the return *char.
+
+/*remove '\r' or '\n' at end of the str. It's the caller's responsibility to free the return *char.*/
 char * rstrip(char s[], int len);
 
-//
-// Created by yaohui on 16-8-1.
-//
+/*Created by yaohui on 16-8-1.*/
 int main(int argc, char ** argv){
 
     int port;
@@ -66,12 +65,13 @@ int main(int argc, char ** argv){
         fflush(stdout);
         close(con);
     }
-//
-//    clean:
-//    printf("bye!\n");
-//    close(server_sock_fd);
-//
-//	return 0;
+/*
+    clean:
+    printf("bye!\n");
+    close(server_sock_fd);
+
+	return 0;
+*/
 }
 
 char * rstrip(char s[], int len){

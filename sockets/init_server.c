@@ -1,6 +1,6 @@
-//
-// Created by yaohui on 16-8-1.
-//
+/*
+ Created by yaohui on 16-8-1.
+*/
 
 #include <netinet/in.h>
 #include <stdio.h>
@@ -8,7 +8,9 @@
 
 #define BACKLOG 10
 
-//init a server sock that listen at a port and specified addr
+/*
+* init a server sock that listen at a port and specified addr
+*/
 int init_server(int port, u_int32_t addr){
     int s_sock_fd, one = 1;
     struct sockaddr_in s_addr;
